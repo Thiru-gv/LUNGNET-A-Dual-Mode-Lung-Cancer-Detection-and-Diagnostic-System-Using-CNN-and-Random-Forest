@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Detection</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background-image: url('/static/lung.jpg'); }
+        h1 { color: #ffffff; }
+        form { background: white; padding: 20px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 2px 8px #aaa; }
+        input, select { padding: 5px; margin: 5px 0; width: 100%; }
+        .result { margin-top: 10px; font-weight: bold; color: green; }
+        .confidence { font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>🫁 Lung Cancer Detection</h1>
+    
+    <form method="POST">
+        <h2>📝 Symptom-Based Prediction</h2>
+        <label>Gender:</label>
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Smoking:</label> <select name="smoking"><option>Yes</option><option>No</option></select>
+        <label>Yellow Fingers:</label> <select name="yellow_fingers"><option>Yes</option><option>No</option></select>
+        <label>Chronic Disease:</label> <select name="chronic"><option>Yes</option><option>No</option></select>
+        <label>Fatigue:</label> <select name="fatigue"><option>Yes</option><option>No</option></select>
+        <label>Wheezing:</label> <select name="wheezing"><option>Yes</option><option>No</option></select>
+        <label>Coughing:</label> <select name="coughing"><option>Yes</option><option>No</option></select>
+        <label>Shortness of Breath:</label> <select name="shortness"><option>Yes</option><option>No</option></select>
+        <label>Chest Pain:</label> <select name="chest_pain"><option>Yes</option><option>No</option></select>
+
+        <button type="submit" name="symptom_submit">Predict Symptoms</button>
+        {% if rf_result %}
+        <div class="result">Prediction: {{ rf_result }}</div>
+        {% endif %}
+    </form>
+
+    <form method="POST" enctype="multipart/form-data">
+        <h2>🖼 Image-Based Prediction</h2>
+        <label>Select Lung CT Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit" name="cnn_submit">Predict Image</button>
+        {% if cnn_result %}
+        <div class="result">Prediction: {{ cnn_result }}</div>
+        {% if confidence %}
+        <div class="confidence">Confidence: {{ confidence }}</div>
+        {% endif %}
+        {% endif %}
+    </form>
+</body>
+</html>
