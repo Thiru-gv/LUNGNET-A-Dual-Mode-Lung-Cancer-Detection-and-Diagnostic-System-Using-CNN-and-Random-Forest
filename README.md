@@ -5,6 +5,8 @@ LUNGNET is a hybrid AI-based system designed to detect and diagnose lung cancer 
 <img width="473" alt="image" src="https://github.com/user-attachments/assets/bf194000-d7d0-4ab0-abae-e856d4c42477" />
 
 
-DATASET
+DATASET:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sample data images: https://www.kaggle.com/datasets/adityamahimkar/iqothnccd-lung-cancer-dataset
+
 sample csv file: https://www.kaggle.com/datasets/jillanisofttech/lung-cancer-detection
