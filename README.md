@@ -1,0 +1,2 @@
+# LUNGNET-A-Dual-Mode-Lung-Cancer-Detection-and-Diagnostic-System-Using-CNN-and-Random-Forest
+LUNGNET is a hybrid AI-based system designed to detect and diagnose lung cancer using two powerful machine learning techniques: Convolutional Neural Networks (CNN) for image classification and Random Forest for tabular clinical data analysis. The goal is to enhance diagnostic accuracy by leveraging both imaging and non-imaging data.
